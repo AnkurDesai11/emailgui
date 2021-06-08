@@ -11,7 +11,7 @@ export class ApicallService {
   constructor(private http: HttpClient) { }
 
   sendEmail(data: any) {
-    return this.http.post(`${this.baseUrl}/sendmail`, data)
+    return this.http.post(`${this.baseUrl}/sendemail`, data)
   }
 
 }

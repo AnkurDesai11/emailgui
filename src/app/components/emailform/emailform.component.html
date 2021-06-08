@@ -18,18 +18,20 @@
 
             <mat-form-field class="field" appearance="outline">
                 <mat-label>Subject</mat-label>
-                <input required name="subject" [(ngModel)]="mailData.subject" matInput>
+                <input name="subject" [(ngModel)]="mailData.subject" matInput>
             </mat-form-field>
 
             <mat-form-field class="field" appearance="outline">
                 <mat-label>Message</mat-label>
-                <textarea required name="messagebody" [(ngModel)]="mailData.messagebody" rows="10" matInput
+                <textarea name="message" [(ngModel)]="mailData.message" rows="10" matInput
                     placeholder="Hi! Hows it going?"></textarea>
             </mat-form-field>
 
+            <mat-progress-bar *ngIf="flag" color="accent" mode="query"></mat-progress-bar>
+
             <div>
-                <button type="submit" mat-raised-button color="accent">Send</button>
-                <button type="reset" mat-raised-button color="primary">Reset</button>
+                <button [disabled]="flag" type="submit" mat-raised-button color="accent">Send</button>
+                <button [disabled]="flag" type="reset" mat-raised-button color="primary">Reset</button>
             </div>
         </form>
     </div>
